@@ -1,0 +1,193 @@
+@import "node_modules/bootstrap-sass/assets/stylesheets/_bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Quattrocento:400,700);
+@import url(https://fonts.googleapis.com/css?family=Fanwood+Text:400,400italic);
+
+$fa-font-path: "vendor/fonts/font-awesome";
+@import "node_modules/font-awesome/scss/font-awesome";
+
+$light_green: #65AC72;
+$dark_green: #41764C;
+
+$text_on_green: white;
+$link_on_green: #0DFF6A;
+
+$font: 'Fanwood Text';
+$title_font: 'Quattrocento';
+
+body {
+  @extend .container;
+
+  padding-top: 70px;
+  padding-bottom: 30px;
+
+  @include gradient-horizontal-three-colors($dark_green, $light_green, 50%, $dark_green);
+}
+
+body > nav {
+  @extend .navbar;
+  @extend .navbar-default;
+  @extend .navbar-fixed-top;
+
+  .branding {
+    @extend .navbar-header;
+    @extend .navbar-brand;
+  }
+
+  background-color: white;
+  border-color: $dark_green;
+  color: $dark_green;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: $title_font, serif;
+
+  .menu {
+
+    ul {
+      @extend .nav;
+      @extend .navbar-nav;
+    }
+  }
+
+  .links {
+
+    ul {
+      @extend .nav;
+      @extend .navbar-nav;
+      @extend .navbar-right;
+      
+      li {
+        a {
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+      }
+    }
+
+    margin-right: 2em;
+  }
+
+  a {
+    color: $dark_green !important;
+  }
+  
+  a:hover, a:focus {
+    color: $light_green !important;
+  }
+
+}
+
+body > main {
+
+  @extend .well-lg;
+
+  background: white;
+  color: black;
+  font-family: $font, serif;
+  font-size: 1.7em;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $dark_green;
+    font-family: 'Quattrocento', serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+  }
+
+  h1 {
+    font-size: 3em;
+    border-bottom: 1px solid $light_green;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+
+  header {
+    @extend .lead;
+  }
+}
+
+body > footer {
+  @extend .row;
+
+  padding-top: 30px;
+  color: $text_on_green;
+
+  a {
+    color: $link_on_green;
+  }
+
+  .copyright {
+    @extend .col-md-8;
+  }
+
+  .about {
+    @extend .col-md-4;
+  }
+
+  p {
+    @extend .small;
+  }
+}
+
+.table-contents > ol {
+  list-style-type: none;
+  counter-reset: chapter;
+}
+
+.table-contents > ol > li:before {
+  counter-increment: chapter;
+  content: "Chapter " counter(chapter) ". ";
+}
+
+.table-contents > ol.appendix {
+  list-style-type: none;
+  counter-reset: appendix;
+}
+
+.table-contents > ol.appendix > li:before {
+  counter-increment: appendix;
+  content: "Appendix " counter(appendix) ". ";
+}
+
+.table-contents > ol > li > li {
+  list-style-type: none;
+}
+
+.page-contents {
+  @extend .panel;
+  @extend .panel-defaults;
+  float: right;
+
+  header {
+    @extend .panel-heading;
+    
+    h3 {
+      @extend .panel-title;
+      color: $dark_green;
+      font-size: 1.5em;
+    }
+
+    ul {
+      @extend .panel-body
+    }
+  }
+
+}
+
+blockquote {
+  font-size: 1em;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.icon.github {
+  @extend .fa;
+  @extend .fa-3x;
+  @extend .fa-github;
+  font-size: 2em;
+}
