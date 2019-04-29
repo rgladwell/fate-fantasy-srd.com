@@ -54,7 +54,7 @@ body > nav {
       @extend .nav;
       @extend .navbar-nav;
       @extend .navbar-right;
-      
+
       li {
         a {
           padding-top: 10px;
@@ -69,7 +69,7 @@ body > nav {
   a {
     color: $dark_green !important;
   }
-  
+
   a:hover, a:focus {
     color: $light_green !important;
   }
@@ -160,12 +160,11 @@ body > footer {
 
 .page-contents {
   @extend .panel;
-  @extend .panel-defaults;
   float: right;
 
   header {
     @extend .panel-heading;
-    
+
     h3 {
       @extend .panel-title;
       color: $dark_green;
